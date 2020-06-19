@@ -7,7 +7,7 @@ trigger:
 - master
 
 schedules:
-- cron: "10 21 * * *"
+- cron: "30 02 * * *"
   displayName: Custom time
   branches:
     include:

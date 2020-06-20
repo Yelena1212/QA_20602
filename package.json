@@ -9,6 +9,7 @@
     "cca-smoke": "npx wdio wdio.conf.js --suite ccaSmoke",
     "report": "allure generate allure-results --clean && allure open",
     "pasv": "npx wdio wdio.conf.js --suite pasv",
+    "viktor": "wdio wdio.conf.js --spec test/victor/specs/basic.spec.js",
     "testDmitry": "wdio wdio.conf.js --spec test/cca/specs/dmitry.spec.js",
     "testAlex": "wdio wdio.conf.js --spec test/cca/specs/alexander.spec.js",
     "testAlisa": "wdio wdio.conf.js --spec test/cca/specs/alisa.spec.js",

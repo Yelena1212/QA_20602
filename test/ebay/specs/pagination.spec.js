@@ -8,18 +8,16 @@ before(() => {
 describe('VIRIFY PAGINATION WORKS CORECTLY', () => {
   it('should search for "shampoo"', function() {
     SearchPage.searchFor("shampoo");
-    expect(SearchPage.searchCategory.getText()).eq('Shampoos & Conditioners');
-
+    browser.waitUntil(() => SearchPage.searchCategory.getText() ==='Shampoos & Conditioners');
+    SearchPage.changeView();
+    browser.pause(3000);
   });
 
-  it('should verify possibility to display 20 items per page', function() {
-    SearchPage.paginationDropDown.scrollIntoView();
-    SearchPage.paginationDropDown.click();
+  it('should verify possibility to display 25 items per page', function() {
     browser.pause(3000);
-    SearchPage.paginationDropDown.selectByVisibleText(20);
-
-    }
-    
-  );
+    SearchPage.changeItemPerList(25);
+    browser.pause(3000);
+    expect(SearchPage.searchItems.length).eq(25);
+    });
 
 });
